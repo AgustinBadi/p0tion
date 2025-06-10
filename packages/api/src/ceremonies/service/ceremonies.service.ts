@@ -120,7 +120,7 @@ export class CeremoniesService {
         } else logAndThrowError(SPECIFIC_ERRORS.SE_CEREMONY_CANNOT_FINALIZE_CEREMONY)
     }
 
-    @Cron(CronExpression.EVERY_10_MINUTES)
+    @Cron(CronExpression.EVERY_10_SECONDS)
     async startCeremony() {
         const scheduledCeremoniesUntilNow = await this.ceremonyModel.findAll({
             where: {
@@ -136,7 +136,7 @@ export class CeremoniesService {
         })
     }
 
-    @Cron(CronExpression.EVERY_10_MINUTES)
+    @Cron(CronExpression.EVERY_10_SECONDS)
     async stopCeremony() {
         const openedCeremoniesUntilNow = await this.ceremonyModel.findAll({
             where: {
