@@ -1,0 +1,56 @@
+{
+    "title": "Privacy Pools Ceremony 15",
+    "description": "The trusted setup Phase 2 ceremony for the Privacy Pools protocol",
+    "startDate": "2025-05-03T9:59:00",
+    "endDate": "2025-06-03T10:30:00",
+    "timeoutMechanismType": "FIXED",
+    "penalty": 10,
+    "circuits": [
+        {
+            "description": "Withdraw",
+            "compiler": {
+                "version": "2.1.2",
+                "commitHash": "2fbf9657b37488fc4bb37a51283c4bc7d424f0cb"
+            },
+            "template": {
+                "source": "https://github.com/0xbow-io/privacy-pools-core/blob/dev/packages/circuits/circuits/withdraw.circom",
+                "commitHash": "13bbc96dc7349fa0a81da828610e739ba5212ff0",
+                "paramsConfiguration": [
+                    32
+                ]
+            },
+            "verification": {
+                "cfOrVm": "CF"
+            },
+            "artifacts": {
+                "r1csStoragePath": "https://github.com/0xbow-io/privacy-pools-core/raw/refs/heads/dev/packages/circuits/build/withdraw/withdraw.r1cs",
+                "wasmStoragePath": "https://github.com/0xbow-io/privacy-pools-core/raw/refs/heads/dev/packages/circuits/build/withdraw/withdraw_js/withdraw.wasm"
+            },
+            "name": "withdraw",
+            "sequencePosition": 1,
+            "fixedTimeWindow": 100
+        },
+        {
+            "description": "Ragequit",
+            "compiler": {
+                "version": "2.1.2",
+                "commitHash": "2fbf9657b37488fc4bb37a51283c4bc7d424f0cb"
+            },
+            "template": {
+                "source": "https://github.com/0xbow-io/privacy-pools-core/blob/dev/packages/circuits/circuits/commitment.circom",
+                "commitHash": "13bbc96dc7349fa0a81da828610e739ba5212ff0",
+                "paramsConfiguration": []
+            },
+            "verification": {
+                "cfOrVm": "CF"
+            },
+            "artifacts": {
+                "r1csStoragePath": "https://github.com/0xbow-io/privacy-pools-core/raw/refs/heads/dev/packages/circuits/build/commitment/commitment.r1cs",
+                "wasmStoragePath": "https://github.com/0xbow-io/privacy-pools-core/raw/refs/heads/dev/packages/circuits/build/commitment/commitment_js/commitment.wasm"
+            },
+            "name": "ragequit",
+            "sequencePosition": 2,
+            "fixedTimeWindow": 100
+        }
+    ]
+}
