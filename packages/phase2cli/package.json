@@ -39,7 +39,7 @@
         "auth:github": "yarn startsx authAPI github",
         "auth:siwe": "yarn startsx auth-siwe",
         "auth:bandada": "yarn startsx auth-bandada",
-        "contribute": "yarn start contribute",
+        "contribute": "yarn startsx contribute",
         "clean": "yarn start clean",
         "list": "yarn startsx list",
         "logout": "yarn startsx logout",
