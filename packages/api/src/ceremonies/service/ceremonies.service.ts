@@ -65,6 +65,11 @@ export class CeremoniesService {
         return { openedCeremonies }
     }
 
+    async findScheduled() {
+        const openedCeremonies = await this.ceremonyModel.findAll({ where: { state: CeremonyState.SCHEDULED } })
+        return { openedCeremonies }
+    }
+
     async findClosed() {
         const closedCeremonies = await this.ceremonyModel.findAll({ where: { state: CeremonyState.CLOSED } })
         return { closedCeremonies }

@@ -44,6 +44,11 @@ export class CeremoniesController {
         return this.ceremoniesService.findOpened()
     }
 
+    @Get("/find-scheduled")
+    findScheduled() {
+        return this.ceremoniesService.findScheduled()
+    }
+
     @Get("/find-closed")
     findClosed() {
         return this.ceremoniesService.findClosed()
